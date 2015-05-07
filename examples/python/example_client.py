@@ -11,4 +11,4 @@ stub = search_rpcz.SearchService_Stub(
 
 request = search_pb2.SearchRequest()
 request.query = 'gold'
-print stub.Search(request, deadline_ms=1000)
+print(stub.Search(request, deadline_ms=1000))
