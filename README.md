@@ -100,7 +100,7 @@ git clone https://code.google.com/p/rpcz/
 cd rpcz
 mkdir build
 cd build
-cmake .. -Drpcz_build_examples=1
+cmake .. -DCMAKE_MINIMUM_REQUIRED_VERSION=3.0 -Drpcz_build_examples=1
 make
 sudo make install
 ```
