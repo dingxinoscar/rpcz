@@ -4,7 +4,12 @@ from rpcz import rpcz_pb2
 
 
 def _call_method(service, method, request_proto, channel):
+    # quick hack to make methods work in python 3
+    if type(method) is bytes:
+        method = method.decode()
+
     method_descriptor = service._exposed_methods.get(method)
+
     if method_descriptor is None:
         channel.send_error(rpcz_pb2.rpc_response_header.NO_SUCH_METHOD)
         return
